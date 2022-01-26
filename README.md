@@ -64,7 +64,7 @@ solana account <your address from the last command>
 
 * Setting up anchor project
 
-```
+```bash
 anchor init <your project name>
 
 cd <your project directory>
