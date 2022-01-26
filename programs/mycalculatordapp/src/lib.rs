@@ -14,19 +14,19 @@ pub mod mycalculatordapp {
 
     pub fn add(ctx: Context<Addition>, num1: i64, num2: i64) -> ProgramResult {
         let calculator = &mut ctx.accounts.calculator;
-        calculator.result = num1 + num2;
+        calculator.result = i64::saturating_add(num1, num2);
         Ok(())
     }
 
     pub fn multiply(ctx: Context<Multiplication>, num1: i64, num2: i64) -> ProgramResult {
         let calculator = &mut ctx.accounts.calculator;
-        calculator.result = num1 * num2;
+        calculator.result = i64::saturating_mul(num1, num2);
         Ok(())
     }
 
     pub fn subtract(ctx: Context<Subtraction>, num1: i64, num2: i64) -> ProgramResult {
         let calculator = &mut ctx.accounts.calculator;
-        calculator.result = num1 - num2;
+        calculator.result = i64::saturating_sub(num1, num2);
         Ok(())
     }
 
